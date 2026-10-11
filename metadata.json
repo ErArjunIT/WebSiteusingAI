@@ -1,0 +1,8 @@
+{
+  "name": "Remix Protein X — Unhinged Performance Fuel",
+  "description": "High-octane bioavailable protein formulas, crispy bars, and clear whey isolates with zero chalk guarantee.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

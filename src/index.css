@@ -1,0 +1,265 @@
+@import "tailwindcss";
+
+@theme {
+  --color-surface: #1c0736;
+  --color-surface-dim: #1c0736;
+  --color-surface-bright: #43305f;
+  --color-surface-container-lowest: #160231;
+  --color-surface-container-low: #24113f;
+  --color-surface-container: #281543;
+  --color-surface-container-high: #33204e;
+  --color-surface-container-highest: #3e2b5a;
+  --color-surface-variant: #3e2b5a;
+  --color-on-surface: #eddcff;
+  --color-on-surface-variant: #c4c9ac;
+  --color-inverse-surface: #eddcff;
+  --color-inverse-on-surface: #3a2755;
+  --color-outline: #8e9379;
+  --color-outline-variant: #444933;
+  --color-surface-tint: #abd600;
+  --color-primary: #ffffff;
+  --color-on-primary: #283500;
+  --color-primary-container: #c3f400;
+  --color-on-primary-container: #556d00;
+  --color-inverse-primary: #506600;
+  --color-secondary: #ffb3af;
+  --color-on-secondary: #68000d;
+  --color-secondary-container: #970017;
+  --color-on-secondary-container: #ff9e99;
+  --color-tertiary: #ffffff;
+  --color-on-tertiary: #00363a;
+  --color-tertiary-container: #7df4ff;
+  --color-on-tertiary-container: #006f77;
+  --color-background: #1c0736;
+  --color-on-background: #eddcff;
+
+  --font-display-hero: 'Bricolage Grotesque', sans-serif;
+  --font-headline: 'Bricolage Grotesque', sans-serif;
+  --font-body: 'Space Grotesk', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+@layer utilities {
+  .px-gutter {
+    padding-left: clamp(1rem, 3vw, 1.5rem);
+    padding-right: clamp(1rem, 3vw, 1.5rem);
+  }
+  .py-space-xl {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+  .p-space-lg {
+    padding: 1.75rem;
+  }
+  .p-space-md {
+    padding: 1rem;
+  }
+  .p-space-sm {
+    padding: 0.5rem;
+  }
+  .p-space-xs {
+    padding: 0.25rem;
+  }
+  .px-space-xl {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+  .px-space-lg {
+    padding-left: 1.75rem;
+    padding-right: 1.75rem;
+  }
+  .px-space-md {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  .px-space-sm {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+  }
+  .px-space-xs {
+    padding-left: 0.25rem;
+    padding-right: 0.25rem;
+  }
+  .py-space-lg {
+    padding-top: 1.75rem;
+    padding-bottom: 1.75rem;
+  }
+  .py-space-md {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+  .py-space-sm {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+  .py-space-xs {
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .gap-space-xl {
+    gap: 3rem;
+  }
+  .gap-space-lg {
+    gap: 1.75rem;
+  }
+  .gap-space-md {
+    gap: 1rem;
+  }
+  .gap-space-sm {
+    gap: 0.5rem;
+  }
+  .gap-space-xs {
+    gap: 0.25rem;
+  }
+
+  .space-y-space-md > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1rem;
+  }
+  .space-y-space-sm > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.5rem;
+  }
+  .space-y-space-xs > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 0.25rem;
+  }
+  .space-y-space-lg > :not([hidden]) ~ :not([hidden]) {
+    margin-top: 1.75rem;
+  }
+
+  .mt-space-xl { margin-top: 3rem; }
+  .mt-space-lg { margin-top: 1.75rem; }
+  .mt-space-md { margin-top: 1rem; }
+  .mt-space-sm { margin-top: 0.5rem; }
+  .mt-space-xs { margin-top: 0.25rem; }
+
+  .mb-space-xl { margin-bottom: 3rem; }
+  .mb-space-lg { margin-bottom: 1.75rem; }
+  .mb-space-md { margin-bottom: 1rem; }
+  .mb-space-sm { margin-bottom: 0.5rem; }
+  .mb-space-xs { margin-bottom: 0.25rem; }
+
+  .pt-space-xl { padding-top: 3rem; }
+  .pt-space-lg { padding-top: 1.75rem; }
+  .pt-space-md { padding-top: 1rem; }
+  .pt-space-sm { padding-top: 0.5rem; }
+  .pt-space-xs { padding-top: 0.25rem; }
+
+  .pb-space-xl { padding-bottom: 3rem; }
+  .pb-space-lg { padding-bottom: 1.75rem; }
+  .pb-space-md { padding-bottom: 1rem; }
+  .pb-space-sm { padding-bottom: 0.5rem; }
+  .pb-space-xs { padding-bottom: 0.25rem; }
+
+  .font-display-hero {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(2.5rem, 6vw, 5.25rem);
+    line-height: 1.02;
+    letter-spacing: -0.04em;
+    font-weight: 800;
+  }
+
+  .font-headline-lg {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: clamp(1.75rem, 3.5vw, 3rem);
+    line-height: 1.1;
+    letter-spacing: -0.03em;
+    font-weight: 700;
+  }
+
+  .font-headline-md {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.75rem;
+    line-height: 2.125rem;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+  }
+
+  .font-headline-sm {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 1.375rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.01em;
+    font-weight: 600;
+  }
+
+  .font-body-lg {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+    letter-spacing: -0.01em;
+    font-weight: 400;
+  }
+
+  .font-body-md {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: 0em;
+    font-weight: 400;
+  }
+
+  .font-body-sm {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 0.875rem;
+    line-height: 1.25rem;
+    letter-spacing: 0em;
+    font-weight: 400;
+  }
+
+  .font-label-code {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    line-height: 1rem;
+    letter-spacing: 0.06em;
+    font-weight: 600;
+  }
+
+  .font-sticker-badge {
+    font-family: 'Bricolage Grotesque', sans-serif;
+    font-size: 0.8125rem;
+    line-height: 1rem;
+    letter-spacing: 0.02em;
+    font-weight: 800;
+  }
+}
+
+/* Material Symbols configuration */
+.material-symbols-outlined {
+  font-family: 'Material Symbols Outlined';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Marquee infinite ticker */
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: ticker 25s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar for clean horizontal scrolls */
+::-webkit-scrollbar {
+  display: none;
+}
+* {
+  scrollbar-width: none;
+}
